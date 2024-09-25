@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vehicle Movement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        @media only screen and (max-width: 600px) {
+            .controls {
+                bottom: 45vh !important;
+            }
+        }
+        
+        #map {
+            height: 1500px;
+            z-index: 1;
+
+        }
+        
+        .car-icon {
+            font-size: 48px;
+        }
+        
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: transparent;
+            padding: 15px;
+            margin-bottom: 15px;
+            z-index: 10;
+        }
+        #trip-select{
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #ffffff; /* Text color */
+            background-color: #007BFF; /* Button background color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            
+        }
+        #trip-select:hover{
+            background-color: #0056b3; /* Darker blue on hover */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        #trip-select:active {
+            background-color: #004085; /* Even darker blue on click */
+            box-shadow: none;
+            transform: translateY(2px);
+        }
+        #show-route{
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #ffffff; /* Text color */
+            background-color: #007BFF; /* Button background color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        #show-route:hover{
+            background-color: #0056b3; /* Darker blue on hover */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        #show-route:active {
+            background-color: #004085; /* Even darker blue on click */
+            box-shadow: none;
+            transform: translateY(2px);
+        }
+        #start-movement{
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #ffffff; /* Text color */
+            background-color: #007BFF; /* Button background color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        #start-movement:hover{
+            background-color: #0056b3; /* Darker blue on hover */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        #start-movement:active {
+            background-color: #004085; /* Even darker blue on click */
+            box-shadow: none;
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <div class="controls">
+        <select id="trip-select">
+            <option value="today">Today's Trip</option>
+            <option value="yesterday">Yesterday's Trip</option>
+            <option value="last-week">Last Week's Ride</option>
+        </select>
+        <button id="show-route">Show Route</button>
+        <button id="start-movement">Start Movement</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
